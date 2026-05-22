@@ -6,17 +6,17 @@ django.setup()
 
 from accounts.models import User
 
-username = 'admin'
-email = 'admin@gmail.com'
-password = 'Admin12345'
+username = 'juan'
+email = 'juan@gmail.com'
+password = '123456'
 
 if not User.objects.filter(username=username).exists():
-    User.objects.create_superuser(
+    User.objects.create_user(
         username=username,
         email=email,
         password=password,
-        role='reclutador'
+        role='candidato'
     )
-    print('Superusuario creado correctamente')
+    print('Usuario candidato creado correctamente')
 else:
-    print('El superusuario ya existe')
+    print('El usuario ya existe')
