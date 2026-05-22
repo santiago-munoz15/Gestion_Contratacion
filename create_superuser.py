@@ -6,20 +6,27 @@ django.setup()
 
 from accounts.models import User
 
-username = 'juan2'
+username = 'juan3'
 
 if not User.objects.filter(username=username).exists():
 
-    user = User(
-        username='juan2',
-        email='juan@gmail.com',
-        role='candidato'
+    user = User.objects.create(
+        username='juan3',
+        email='juan3@gmail.com',
+        role='candidato',
+        is_active=True
     )
 
     user.set_password('123456')
     user.save()
 
-    print('Usuario candidato creado correctamente')
+    print('Usuario creado correctamente')
 
 else:
-    print('El usuario ya existe')
+    user = User.objects.get(username=username)
+
+    user.set_password('123456')
+    user.is_active = True
+    user.save()
+
+    print('Usuario actualizado correctamente')
