@@ -72,10 +72,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://gestion-frontend-qyvy.onrender.com",
 ]
+
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'gestion_contratacion.urls'
 
